@@ -1,0 +1,68 @@
+<script>
+	export let manga;
+</script>
+
+<div class="manga-card">
+	<img src={manga.images.webp.image_url} alt={manga.title} />
+	<div class="description">
+		<h2>{manga.title}</h2>
+		<p>
+			Chapters:
+			<span>
+				{manga.chapters >= 10 ? manga.chapters : `0${manga.chapters}`}
+			</span>
+		</p>
+		<p id={manga.publishing
+            ? 'emision' 
+            : 'finalizado'
+            }
+            >Status: {manga.status}
+        </p>
+	</div>
+</div>
+
+<style>
+	.manga-card {
+		
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		padding: 1rem;
+		margin-bottom: 0.5rem;
+	}
+	img {
+		width: 100%;
+		height: 60vh;
+		object-fit: cover;
+		border-radius: 0.7rem;
+		margin-bottom: 1rem;
+		transform: scale(var(--escala, 1));
+		transition: transform 1s;
+	}
+	img:hover {
+		--escala: 1.05;
+		cursor: pointer;
+	}
+	h2 {
+		font-size: 0.9rem;
+	}
+	.description {
+		height: 10vh;
+	}
+	p {
+		font-size: 0.8rem;
+	}
+	span {
+		color: white;
+		background: #808080;
+		border-radius: 1rem;
+        padding:0.3rem;
+        text-align: center;
+	}
+	#emision {
+		color: lightseagreen;
+	}
+	#finalizado {
+		color: crimson;
+	}
+</style>
