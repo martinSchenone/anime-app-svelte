@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	let anime = data.props.data;
+	let manga = data.props.data;
 	let isOpen = false;
     const open = () =>{
         isOpen = !isOpen;
@@ -8,18 +8,18 @@
 </script>
 
 <section>
-	<div class="containeranime">
+	<div class="containerManga">
 		<div class="img__cont">
 			<div class="score">
-				<span>{anime.score}</span>
+				<span>{manga.score}</span>
 			</div>
-			<img class="anime__img" src={anime.images.jpg.image_url} alt={anime.title} />
+			<img class="manga__img" src={manga.images.jpg.image_url} alt={manga.title} />
 		</div>
 		<div class="title">
-			<h1>{anime.title}</h1>
+			<h1>{manga.title}</h1>
 		</div>
 		<div class="genres">
-			{#each anime.genres as genre}
+			{#each manga.genres as genre}
 				<span class="genre__name">{genre.name}</span>
 			{/each}
 		</div>
@@ -28,7 +28,7 @@
 				<summary on:click={open}>
 					{isOpen ? 'Close Synopsis' : 'Open Synopsis'}
 				</summary>
-				<p>{anime.synopsis}</p>
+				<p>{manga.synopsis}</p>
 			</details>
 		</div>
 	</div>
@@ -44,7 +44,7 @@
 		border-style: solid;
 		border-color: rgba(230, 230, 230, 0.473);
  	}
-	.containeranime {
+	.containerManga {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

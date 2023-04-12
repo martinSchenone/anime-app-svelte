@@ -27,7 +27,6 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		height: 10vh;
 	}
 	.datos {
 		display: flex;
@@ -39,7 +38,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 10vw;;
     }
 	ul {
 		list-style: none;

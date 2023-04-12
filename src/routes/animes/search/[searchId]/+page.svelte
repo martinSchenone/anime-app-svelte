@@ -1,12 +1,10 @@
 <script>
-    import AnimeCard from '../../components/AnimeCard.svelte';
-	import SearchComponent from '../../components/SearchComponent.svelte';
+    import AnimeCard from '../../../../components/AnimeCard.svelte';
     export let data;
     const animes = data.props.data;
 </script>
 
 <section>
-    <SearchComponent/>
     <div class="animes">
         {#each animes as anime}
             <AnimeCard {anime}/>

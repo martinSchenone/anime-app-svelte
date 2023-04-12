@@ -14,8 +14,13 @@
 </section>
 
 <style>
+        section{
+        width: 90%;
+        max-width: 1200px;
+        margin-inline: auto;
+    }
 .mangas{
         display: grid;
         grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-        gap: 1rem;
+        gap: 3rem;
     }</style>

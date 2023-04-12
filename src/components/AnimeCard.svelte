@@ -32,19 +32,16 @@
 		height: 60vh;
 		object-fit: cover;
 		border-radius: 0.7rem;
-		margin-bottom: 1rem;
+		margin-bottom: .5rem;
 		transform: scale(var(--escala, 1));
-		transition: transform 1s;
+		transition: transform 250ms linear;
 	}
 	img:hover {
-		--escala: 1.05;
+		--escala: 1.025;
 		cursor: pointer;
 	}
 	h2 {
 		font-size: 0.9rem;
-	}
-	.description {
-		height: 10vh;
 	}
 	p {
 		font-size: 0.8rem;

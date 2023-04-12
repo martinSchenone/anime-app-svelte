@@ -15,33 +15,38 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background-color: #ededed;
+		background-color: #101010;
+		width: 90%;
+		max-width: 1200px;
+		margin-inline: auto;
+		margin-bottom: .5rem;
+		border-bottom-left-radius: 1rem;
+		border-bottom-right-radius: 1rem;
 	}
 	.title {
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
-		margin-left: 1rem;
+		font-size: min(1rem,10vw + 1rem,2vmin);
 		padding: 0rem 1rem;
-		font-size: 0.9rem;
 	}
-	.nav {
-		padding: 1rem;
-	}
+
 	.nav-ul {
 		display: flex;
 		gap: 2rem;
 		list-style: none;
+		padding: 0rem 1rem;
+		font-size: min(1rem,10vw + 1rem,2.5vmin);
 	}
 	.nav-ul a {
 		text-decoration: none;
-		color: #303030;
+		color: #f1f1f1;
 	}
 	.nav-ul a:hover {
 		color: rgb(78, 78, 78);
 	}
 	h1 > a {
 		text-decoration: none;
-		color: #303030;
+		color: #f1f1f1;
 	}
 </style>
