@@ -5,6 +5,7 @@
     const open = () =>{
         isOpen = !isOpen;
     }
+	console.log(anime)
 </script>
 
 <section>
@@ -13,10 +14,15 @@
 			<div class="score">
 				<span>{anime.score}</span>
 			</div>
-			<img class="anime__img" src={anime.images.jpg.image_url} alt={anime.title} />
+			<img class="img__anime" src={anime.images.jpg.large_image_url} alt={anime.title} />
 		</div>
 		<div class="title">
 			<h1>{anime.title}</h1>
+		</div>
+		<div class="author">
+			<p>Studio: {#each anime.studios as studio}
+				 <span>{studio.name} <br></span>
+			{/each}</p>
 		</div>
 		<div class="genres">
 			{#each anime.genres as genre}
@@ -41,9 +47,13 @@
 		margin-inline: auto;
 		font-size: var(--step-0);
 		letter-spacing: 0.1rem;
-		border-style: solid;
-		border-color: rgba(230, 230, 230, 0.473);
+		border:2px solid rgb(211, 232, 255);
  	}
+	.img__cont{
+	}
+	.img__anime{
+		width: 100%;
+	}
 	.containeranime {
 		display: flex;
 		flex-direction: column;

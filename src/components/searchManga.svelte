@@ -11,7 +11,7 @@
 		}
 	}
 	function submitSearch() {
-		goto('/animes/search/' + inputValue);
+		goto('/mangas/search/' + inputValue);
 	}
 </script>
 
@@ -20,12 +20,12 @@
 		<label 
 		in:fly="{{ y: -10, duration: 500 }}"
 		out:fade
-		for="search_movie">
-		Search animes
+		for="search_movie"
+		class="searchText">
+		Search mangas
 	</label>
 	{/if}
 	<input
-		required
 		on:blur={cancelInactive}
 		on:focus={() => (active = true)}
 		bind:value={inputValue}
@@ -35,6 +35,7 @@
 	/>
 	{#if inputValue}
 		<button
+		class="searchBtn"
 		in:fly="{{ y: 0, duration: 500 }}"
 		out:fade
 		>Search</button>
@@ -89,5 +90,10 @@
 	}
 	input.selected {
 		background-color:rgb(205, 229, 255);
+	}
+	@media all and (min-width:1440px){
+		.searchText,input,.searchBtn{
+			font-size: var(--step-1);
+		}
 	}
 </style>

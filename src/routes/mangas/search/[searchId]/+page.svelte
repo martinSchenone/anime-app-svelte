@@ -1,15 +1,14 @@
+
 <script>
-    import AnimeCard from '../../components/AnimeCard.svelte';
-	import SearchComponent from '../../components/SearchComponent.svelte';
+    import MangaCard from '../../../../components/MangaCard.svelte';
     export let data;
-    const animes = data.props.data;
+    const mangas = data.props.data;
 </script>
 
 <section>
-    <SearchComponent/>
-    <div class="animes">
-        {#each animes as anime}
-            <AnimeCard {anime}/>
+    <div class="mangas">
+        {#each mangas as manga}
+            <MangaCard {manga}/>
         {/each}
     </div>
 </section>
@@ -21,7 +20,7 @@
         margin-inline: auto;
 
     }
-    .animes{
+    .mangas{
         display: grid;
         grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
         gap: 3rem;

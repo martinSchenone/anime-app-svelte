@@ -1,6 +1,7 @@
 <script>
 	export let data;
 	let manga = data.props.data;
+	console.log(manga)
 	let isOpen = false;
     const open = () =>{
         isOpen = !isOpen;
@@ -13,10 +14,15 @@
 			<div class="score">
 				<span>{manga.score}</span>
 			</div>
-			<img class="manga__img" src={manga.images.jpg.image_url} alt={manga.title} />
+			<img class="manga__img" src={manga.images.jpg.large_image_url} alt={manga.title} />
 		</div>
 		<div class="title">
 			<h1>{manga.title}</h1>
+		</div>
+		<div class="author">
+			<p>Author: {#each manga.authors as author}
+				 <span>{author.name} <br></span>
+			{/each}</p>
 		</div>
 		<div class="genres">
 			{#each manga.genres as genre}
@@ -41,8 +47,7 @@
 		margin-inline: auto;
 		font-size: var(--step-0);
 		letter-spacing: 0.1rem;
-		border-style: solid;
-		border-color: rgba(230, 230, 230, 0.473);
+		border:2px solid rgb(211, 232, 255);
  	}
 	.containerManga {
 		display: flex;
@@ -51,6 +56,9 @@
 		align-items: center;
 		gap: 2rem;
 		padding: 1rem;
+	}
+	.manga__img{
+		width: 100%;
 	}
 	.score {
 		color: #f1f1f1;

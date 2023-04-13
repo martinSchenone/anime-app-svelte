@@ -1,11 +1,13 @@
 <script>
 	import MangaCard from '../../components/MangaCard.svelte';
+    import SearchManga from '../../components/searchManga.svelte';
     export let data;
     const mangas = data.props.data;
 </script>
 
 
 <section>
+    <SearchManga/>
     <div class="mangas">
         {#each mangas as manga}
             <MangaCard {manga} />
@@ -21,6 +23,6 @@
     }
 .mangas{
         display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
         gap: 3rem;
     }</style>

@@ -4,8 +4,8 @@
 	</div>
 	<nav class="nav">
 		<ul class="nav-ul">
-			<li><a href="/animes" sveltekit:prefetch>Top Animes</a></li>
-			<li><a href="/mangas" sveltekit:prefetch>Top Mangas</a></li>
+			<li><a href="/animes" sveltekit:prefetch>Animes</a></li>
+			<li><a href="/mangas" sveltekit:prefetch>Mangas</a></li>
 		</ul>
 	</nav>
 </header>
@@ -15,8 +15,10 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background-color: #101010;
 		width: 90%;
+		border-bottom:3px solid rgb(223,238,255);
+		background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(236,245,255,1) 100%);
 		max-width: 1200px;
 		margin-inline: auto;
 		margin-bottom: .5rem;
@@ -36,17 +38,27 @@
 		gap: 2rem;
 		list-style: none;
 		padding: 0rem 1rem;
-		font-size: min(1rem,10vw + 1rem,2.5vmin);
+		font-size: var(--step--2);
 	}
 	.nav-ul a {
 		text-decoration: none;
-		color: #f1f1f1;
+		color: #101010;
 	}
 	.nav-ul a:hover {
 		color: rgb(78, 78, 78);
 	}
 	h1 > a {
 		text-decoration: none;
-		color: #f1f1f1;
+		color: #101010;
+	}
+	@media all and (min-width:1200px){
+		.nav-ul{
+			font-size: var(--step-0);
+		}
+	}
+	@media all and (min-width:1800px){
+		.nav-ul{
+			font-size: var(--step-1);
+		}
 	}
 </style>

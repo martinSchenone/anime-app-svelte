@@ -4,7 +4,7 @@
 
 <div class="manga-card">
 	<a href={'/mangas/' + manga.mal_id}>
-		<img src={manga.images.webp.image_url} alt={manga.title} />
+		<img src={manga.images.webp.large_image_url} alt={manga.title} />
 	</a>
 	<div class="description">
 		<h2>
@@ -12,12 +12,6 @@
 				{manga.title}
 			</a>
 		</h2>
-		<p>
-			Chapters:
-			<span>
-				{manga.chapters >= 10 ? manga.chapters : `0${manga.chapters}`}
-			</span>
-		</p>
 		<p id={manga.publishing ? 'emision' : 'finalizado'}>Status: {manga.status}</p>
 	</div>
 </div>
@@ -56,13 +50,7 @@
 	p {
 		font-size: 0.8rem;
 	}
-	span {
-		color: white;
-		background: #808080;
-		border-radius: 1rem;
-		padding: 0.3rem;
-		text-align: center;
-	}
+
 	#emision {
 		color: lightseagreen;
 	}
