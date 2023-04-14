@@ -1,6 +1,6 @@
 <section>
     <h1>Welcome to AnimeX</h1>
-    <h3><a href="/animes">Click to see top animes and mangas</a></h3>
+    <h3><a href="/anime">Click to see top animes and mangas</a></h3>
 </section>
 
 <style>
@@ -13,11 +13,11 @@
         align-items: center;
         flex-direction: column;
         min-height: 70vh;
-        color: #202020;
+        color: #f1f1f1;
     }
     a{
         text-decoration: none;
-        color: #202020;
+        color: #f1f1f1;
       
     }
 </style>
