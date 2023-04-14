@@ -52,7 +52,7 @@
 	button {
 		font-size: 0.7rem;
 		padding: 0rem 1rem;
-		background-color: rgb(164, 176, 253);
+		background-color: #243B55;
 		color: white;
 		font-weight: bold;
 		border: none;
@@ -70,11 +70,11 @@
 		border: none;
 		font-size: 1rem;
 		outline: none;
-		color: #252525;
+		color: #f1f1f1;
 		padding: 0.5rem 0.1rem;
 		transition: background-color 0.75s ease-out;
 		font-weight: bold;
-		background-color:rgb(205, 229, 255);
+		background-color:#243B55;
 		border-radius: 10px;
 		padding: 1rem;
 	}
@@ -85,11 +85,11 @@
 		left: 0;
 		transform: translate(0, -50%);
 		pointer-events: none;
-		color: #252525;
+		color: #f1f1f1;
 		padding: 0rem 1rem;
 	}
 	input.selected {
-		background-color:rgb(205, 229, 255);
+		background-color:#446d9c;
 	}
 	@media all and (min-width:1440px){
 		.searchText,input,.searchBtn{

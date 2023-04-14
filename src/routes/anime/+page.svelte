@@ -1,28 +1,29 @@
 <script>
-	import MangaCard from '../../components/MangaCard.svelte';
-	import SearchManga from '../../components/searchManga.svelte';
+	import AnimeCard from '../../components/AnimeCard.svelte';
+	import SearchComponent from '../../components/SearchComponent.svelte';
 	export let data;
-	$: mangas = data.props.data;
+	$: animes = data.props.data;
 	let dataPaginas = data.props.pagination;
 	let pageSize = dataPaginas.last_visible_page;
 	$: totalItems = data.props.pagination.items.total;
 	$: totalPages = Math.ceil(totalItems / pageSize);
-	$: currentPage = dataPaginas.current_page
+	$: currentPage = dataPaginas.current_page || 1;
 </script>
 
 <section>
-	<SearchManga />
-	<div class="mangas">
-		{#each mangas as manga}
-			<MangaCard {manga} />
+	<SearchComponent />
+	<div class="animes">
+		{#each animes as anime}
+			<AnimeCard {anime} />
 		{/each}
 	</div>
 </section>
 <div class="pagination">
 	{#each Array(totalPages) as _, idx}
-		<a 
-        class="currentPage"
-        href="/mangas?page={dataPaginas.has_next_page ? (currentPage = idx) : (currentPage)}">
+		<a
+			class="currentPage"
+			href="/anime?page={dataPaginas.has_next_page ? (currentPage = idx) : (currentPage = 1)}"
+		>
 			{idx * 1}
 		</a>
 	{/each}
@@ -34,29 +35,29 @@
 		max-width: 1200px;
 		margin-inline: auto;
 	}
-	.mangas {
+	.animes {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		gap: 3rem;
 	}
 	.pagination {
-        width: 90%;
+		width: 90%;
 		max-width: 1200px;
 		margin-inline: auto;
 		display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(35px,1fr));
-        gap: 1rem;
-        padding: 1rem;
-        place-items: center;
-        font-size: var(--step-0);
-        color: #101010;
+		grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+		gap: 2rem;
+		padding: 1rem;
+		place-items: center;
+		font-size: var(--step-0);
+		color: #101010;
 	}
 	a {
-        justify-self: center;
+		justify-self: center;
 		all: unset;
 		cursor: pointer;
 	}
-    .currentPage{
+	.currentPage{
 		transition: all 250ms linear;
 		padding: 0.15rem;
 		width: 35px;

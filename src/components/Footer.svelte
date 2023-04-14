@@ -22,11 +22,13 @@
 <style>
 	@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css');
 	footer {
+		border-top: 1px solid #ccccccad;
 		padding: 0rem 1rem;
 		margin-top: 3rem;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		color: #f1f1f1;
 	}
 	.datos {
 		display: flex;
@@ -47,7 +49,7 @@
 	}
 	a {
 		text-decoration: none;
-		color: #000000;
+		color: inherit;
 	}
     p{
         font-size: 1.2rem;

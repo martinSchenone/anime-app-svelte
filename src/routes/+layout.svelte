@@ -9,6 +9,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>AnimeX</title>
+		<script src="https://kit.fontawesome.com/6bc29ab44b.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<Nav />
@@ -20,7 +21,6 @@
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 	/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-
 	:root {
 		--step--2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.8rem);
 		--step--1: clamp(0.94rem, calc(0.92rem + 0.11vw), 1rem);
@@ -34,11 +34,20 @@
 	* {
 		padding: 0;
 		margin: 0;
+		box-sizing: border-box;
+		scroll-behavior: smooth;
 	}
 	body {
-		background: rgb(223,238,255);
-background: radial-gradient(circle, rgba(223,238,255,1) 95%, rgba(255,255,255,1) 100%);
+		background: #141e30; /* fallback for old browsers */
+		background: -webkit-linear-gradient(to top, #243b55, #141e30); /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(
+			to top,
+			#243b55,
+			#141e30
+		); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		min-height: 100vh;
 		font-family: 'Roboto', sans-serif;
 		font-size: var(--step-0);
+		letter-spacing: 1.15px;
 	}
 </style>

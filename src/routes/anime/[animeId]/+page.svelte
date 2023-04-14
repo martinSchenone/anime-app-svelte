@@ -5,7 +5,6 @@
     const open = () =>{
         isOpen = !isOpen;
     }
-	console.log(anime)
 </script>
 
 <section>
@@ -46,13 +45,16 @@
 		max-width: 1200px;
 		margin-inline: auto;
 		font-size: var(--step-0);
-		letter-spacing: 0.1rem;
-		border:2px solid rgb(211, 232, 255);
+		letter-spacing: 1.15px;
+		border: 1px solid rgba(221, 221, 221, 0.39);
+		border-radius: 0.3rem;
+		color: #f1f1f1;
  	}
 	.img__cont{
 	}
 	.img__anime{
 		width: 100%;
+		filter: drop-shadow(3px 3px 2px rgb(132, 200, 255));
 	}
 	.containeranime {
 		display: flex;
@@ -63,13 +65,14 @@
 		padding: 1rem;
 	}
 	.score {
+		z-index: 100;
 		color: #f1f1f1;
 		font-weight: 600;
 		position: absolute;
 		border-radius: 0.3rem;
 		padding: 0.3rem;
 		margin: 0.3rem;
-		background-color: rgb(255, 75, 105);
+		background-color: #141e30;
 	}
 	.genres {
 		display: flex;
@@ -78,7 +81,7 @@
 		flex-wrap: wrap;
 	}
 	.genre__name {
-		background-color: #202020;
+		background-color: #243b55;
         color: #f1f1f1;
 		padding: 0.7rem;
 		border-radius: 30px;
@@ -93,7 +96,7 @@
 		padding: 0.5rem;
 		border-radius: 30px;
 		width: fit-content;
-        background-color: #202020;
+        background-color: #243b55;
         color: #f1f1f1;
         font-size: var(--step--1);
 	}
