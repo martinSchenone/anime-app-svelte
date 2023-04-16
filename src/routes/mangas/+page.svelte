@@ -2,9 +2,10 @@
 	import MangaCard from '../../components/MangaCard.svelte';
 	import SearchManga from '../../components/searchManga.svelte';
 	export let data;
-	$: mangas = data.props.data;
 	let dataPaginas = data.props.pagination;
-	let pageSize = dataPaginas.last_visible_page;
+	let pageSize = 3000;
+	// dataPaginas.last_visible_page por motivos de cantidad de paginas reemplaze la pageSize por un valor fijo
+	$: mangas = data.props.data;
 	$: totalItems = data.props.pagination.items.total;
 	$: totalPages = Math.ceil(totalItems / pageSize);
 	$: currentPage = dataPaginas.current_page
@@ -23,7 +24,7 @@
 		<a 
         class="currentPage"
         href="/mangas?page={dataPaginas.has_next_page ? (currentPage = idx) : (currentPage)}">
-			{idx * 1}
+		{idx + 1 }
 		</a>
 	{/each}
 </div>
@@ -45,7 +46,7 @@
 		margin-inline: auto;
 		display: grid;
         grid-template-columns: repeat(auto-fit,minmax(35px,1fr));
-        gap: 1rem;
+        gap: 2rem;
         padding: 1rem;
         place-items: center;
         font-size: var(--step-0);
@@ -59,7 +60,7 @@
     .currentPage{
 		transition: all 250ms linear;
 		padding: 0.15rem;
-		width: 35px;
+		width: 3rem;
 		height: fit-content;
 		text-align: center;
 		border-radius: 0.5rem;
