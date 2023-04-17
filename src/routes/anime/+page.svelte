@@ -1,4 +1,5 @@
 <script>
+	import SortBy from '../../components/SortBy.svelte';
 	import AnimeCard from '../../components/AnimeCard.svelte';
 	import SearchComponent from '../../components/SearchComponent.svelte';
 	export let data;
@@ -13,6 +14,7 @@
 
 <section>
 	<SearchComponent />
+	<SortBy/>
 	<div class="animes">
 		{#each animes as anime}
 			<AnimeCard {anime} />

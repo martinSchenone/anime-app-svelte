@@ -1,6 +1,7 @@
 <script>
 	import MangaCard from '../../components/MangaCard.svelte';
 	import SearchManga from '../../components/searchManga.svelte';
+	import SortByManga from '../../components/SortByManga.svelte';
 	export let data;
 	let dataPaginas = data.props.pagination;
 	let pageSize = 3000;
@@ -13,6 +14,7 @@
 
 <section>
 	<SearchManga />
+	<SortByManga/>
 	<div class="mangas">
 		{#each mangas as manga}
 			<MangaCard {manga} />

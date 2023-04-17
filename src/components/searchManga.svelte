@@ -59,10 +59,8 @@
 		position: absolute;
 		bottom: 50%;
 		right: -32px;
-		transform: translate(0, 50%);
+		transform: translate(0, 49%);
 		height: 100%;
-		border-top-right-radius: 10px;
-		border-bottom-right-radius: 10px;
 		cursor: pointer;
 	}
 	input {
@@ -75,7 +73,6 @@
 		transition: background-color 0.75s ease-out;
 		font-weight: bold;
 		background-color:#243B55;
-		border-radius: 10px;
 		padding: 1rem;
 	}
 	label {
