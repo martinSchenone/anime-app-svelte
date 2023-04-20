@@ -1,11 +1,14 @@
 
 <script>
-    import MangaCard from '../../../../components/MangaCard.svelte';
+    import BackButton from '../../../../components/BackButton.svelte';
+import MangaCard from '../../../../components/MangaCard.svelte';
+    import {fly} from 'svelte/transition'
     export let data;
     const mangas = data.props.data;
 </script>
 
-<section>
+<section in:fly={{ x: 50, duration: 500, delay: 500 }}>
+    <BackButton/>
     <div class="mangas">
         {#each mangas as manga}
             <MangaCard {manga}/>

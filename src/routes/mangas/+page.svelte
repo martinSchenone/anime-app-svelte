@@ -2,6 +2,7 @@
 	import MangaCard from '../../components/MangaCard.svelte';
 	import SearchManga from '../../components/searchManga.svelte';
 	import SortByManga from '../../components/SortByManga.svelte';
+	import { fly } from 'svelte/transition';
 	export let data;
 	let dataPaginas = data.props.pagination;
 	let pageSize = 3000;
@@ -12,7 +13,7 @@
 	$: currentPage = dataPaginas.current_page
 </script>
 
-<section>
+<section in:fly={{ x: 50, duration: 500, delay: 500 }}>
 	<SearchManga />
 	<SortByManga/>
 	<div class="mangas">

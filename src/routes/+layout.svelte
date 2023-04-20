@@ -1,6 +1,7 @@
 <script>
 	import Nav from '../components/Nav.svelte';
 	import Footer from '../components/Footer.svelte';
+	
 </script>
 
 <html lang="en">
@@ -10,8 +11,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>AnimeX</title>
 		<script src="https://kit.fontawesome.com/6bc29ab44b.js" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/6bc29ab44b.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
+		
 		<Nav />
 		<slot />
 		<Footer />

@@ -2,6 +2,7 @@
 	import SortBy from '../../components/SortBy.svelte';
 	import AnimeCard from '../../components/AnimeCard.svelte';
 	import SearchComponent from '../../components/SearchComponent.svelte';
+	import { fly } from 'svelte/transition';
 	export let data;
 	let dataPaginas = data.props.pagination;
 	let pageSize = 3000;
@@ -10,9 +11,11 @@
 	$: totalItems = data.props.pagination.items.total;
 	$: totalPages = Math.ceil(totalItems / pageSize);
 	$: currentPage = dataPaginas.current_page || 1;
+	
+	
 </script>
 
-<section>
+<section in:fly={{ x: 50, duration: 500, delay: 500 }}>
 	<SearchComponent />
 	<SortBy/>
 	<div class="animes">

@@ -1,4 +1,5 @@
 <script>
+	import { fly } from 'svelte/transition';
 	export let data;
 	let anime = data.props.data;
 	let isOpen = false;
@@ -7,7 +8,8 @@
     }
 </script>
 
-<section>
+
+<section in:fly={{ x: 50, duration: 500, delay: 500 }}>
 	<div class="containeranime">
 		<div class="img__cont">
 			<div class="score">
@@ -49,6 +51,7 @@
 		border: 1px solid rgba(221, 221, 221, 0.39);
 		border-radius: 0.3rem;
 		color: #f1f1f1;
+		margin-top: 1.5rem;
  	}
 	.img__cont{
 	}

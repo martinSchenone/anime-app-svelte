@@ -1,14 +1,14 @@
 <script>
+	import {fly} from 'svelte/transition'
 	export let data;
 	let manga = data.props.data;
-	console.log(manga)
 	let isOpen = false;
     const open = () =>{
         isOpen = !isOpen;
     }
 </script>
 
-<section>
+<section in:fly={{ x: 50, duration: 500, delay: 500 }}>
 	<div class="containerManga">
 		<div class="img__cont">
 			<div class="score">
