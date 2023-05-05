@@ -1,6 +1,11 @@
+<script>
+	export let pagina;
+</script>
+
 <button class="btn">
-	<a href="/anime" sveltekit:prefetch>
+	<a href={pagina} pagina={pagina} sveltekit:prefetch>
 		<img src="/left.svg" alt="" />
+		<span>Back</span>
 	</a>
 </button>
 
@@ -30,5 +35,9 @@
 		align-items: center;
 		gap: 0.5rem;
 		color: white;
+	}
+	span{
+		color: #101010;
+		font-weight:bold;
 	}
 </style>

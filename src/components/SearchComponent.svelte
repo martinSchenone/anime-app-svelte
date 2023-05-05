@@ -19,14 +19,14 @@
 	{#if !active}
 		<label 
 		class="searchText"
-		in:fly={{ y: -10, duration: 500 }} out:fade for="search_movie"> Search animes </label>
+		in:fly={{ y: -10, duration: 500 }} out:fade for="search_anime"> Search animes </label>
 	{/if}
 	<input
 		required
 		on:blur={cancelInactive}
 		on:focus={() => (active = true)}
 		bind:value={inputValue}
-		name="search_movie"
+		name="search_anime"
 		type="text"
 		class={active ? 'selected' : ''}
 	/>
@@ -42,8 +42,8 @@
 		position: relative;
 		width: 70%;
 		max-width: 350px;
-		margin: 1rem;
-	}
+		margin: 1.5rem 0rem;
+}
 	button {
 		font-size: 0.7rem;
 		padding: 0rem 1rem;
@@ -57,6 +57,10 @@
 		transform: translate(0, 49%);
 		height: 100%;
 		cursor: pointer;
+		border-top-right-radius: 1rem;
+		border-bottom-right-radius: 1rem;
+
+		
 	}
 	input {
 		width: 100%;
@@ -69,6 +73,8 @@
 		font-weight: bold;
 		background: #243B55;
 		padding: 1rem;
+		border-radius: 1rem;
+		
 	}
 	label {
 		position: absolute;

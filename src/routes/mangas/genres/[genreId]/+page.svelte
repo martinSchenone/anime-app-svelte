@@ -7,7 +7,7 @@
 </script>
 
 <section class="genres" in:fly={{ x: 50, duration: 500, delay: 500 }}>
-	<BackButton/>
+	<BackButton pagina='/mangas'/>
 	<div class="mangas">
 		{#each mangas as manga}
 			<MangaCard {manga} />

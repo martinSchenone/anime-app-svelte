@@ -12,7 +12,10 @@
 	<div class="containerManga">
 		<div class="img__cont">
 			<div class="score">
-				<span>{manga.score}</span>
+				<span>
+					<i class="fa-solid fa-star" style="color: #fbff00;"></i>
+					{manga.score}
+				</span>
 			</div>
 			<img class="manga__img" src={manga.images.jpg.large_image_url} alt={manga.title} />
 		</div>
@@ -72,6 +75,7 @@
 		padding: 0.3rem;
 		margin: 0.3rem;
 		background-color: #141e30;
+		z-index: 10;
 	}
 	.genres {
 		display: flex;

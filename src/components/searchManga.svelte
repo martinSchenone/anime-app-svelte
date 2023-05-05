@@ -47,7 +47,7 @@
 		position: relative;
 		width:70%;
 		max-width: 350px;
-		margin: 1rem;
+		margin: 1.5rem 0rem;
 	}
 	button {
 		font-size: 0.7rem;
@@ -62,6 +62,8 @@
 		transform: translate(0, 49%);
 		height: 100%;
 		cursor: pointer;
+		border-top-right-radius: 1rem;
+		border-bottom-right-radius: 1rem;
 	}
 	input {
 		width: 100%;
@@ -74,6 +76,7 @@
 		font-weight: bold;
 		background-color:#243B55;
 		padding: 1rem;
+		border-radius: 1rem;
 	}
 	label {
 		position: absolute;

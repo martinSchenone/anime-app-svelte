@@ -1,19 +1,23 @@
 <script>
+	import { space } from 'svelte/internal';
 	import { fly } from 'svelte/transition';
 	export let data;
 	let anime = data.props.data;
 	let isOpen = false;
-    const open = () =>{
-        isOpen = !isOpen;
-    }
+	const open = () => {
+		isOpen = !isOpen;
+	};
+	console.log(anime);
 </script>
-
 
 <section in:fly={{ x: 50, duration: 500, delay: 500 }}>
 	<div class="containeranime">
 		<div class="img__cont">
 			<div class="score">
-				<span>{anime.score}</span>
+				<span>
+					<i class="fa-solid fa-star" style="color: #fbff00;" />
+					{anime.score}
+				</span>
 			</div>
 			<img class="img__anime" src={anime.images.jpg.large_image_url} alt={anime.title} />
 		</div>
@@ -21,13 +25,26 @@
 			<h1>{anime.title}</h1>
 		</div>
 		<div class="author">
-			<p>Studio: {#each anime.studios as studio}
-				 <span>{studio.name} <br></span>
-			{/each}</p>
+			<p>
+				Studio: {#each anime.studios as studio}
+					<span>{studio.name} <br /></span>
+				{/each}
+			</p>
+		</div>
+		<div class="estado">
+			<span>Status:</span>
+			<span>{anime.status}</span>
+		</div>
+		<div class="episodes">
+			<i class="fa-regular fa-eye" />
+			<span>Episodes: {anime.episodes}</span>
 		</div>
 		<div class="genres">
+			<span class="title-genre">Genres</span>
 			{#each anime.genres as genre}
-				<span class="genre__name">{genre.name}</span>
+				<span class="genre__name">
+					{genre.name}
+				</span>
 			{/each}
 		</div>
 		<div class="sinapsis">
@@ -38,6 +55,18 @@
 				<p>{anime.synopsis}</p>
 			</details>
 		</div>
+		{#if anime.trailer.embed_url.length === 0}
+			<span>Trailer not found</span>
+		{:else}
+			<h2 style="border-bottom:1px solid #ccc">Trailer</h2>
+			<div class="trailer">
+				<iframe class="video"
+					src={anime.trailer.embed_url}
+					frameborder="0"
+					title="trailer"
+				/>
+			</div>
+		{/if}
 	</div>
 </section>
 
@@ -52,10 +81,9 @@
 		border-radius: 0.3rem;
 		color: #f1f1f1;
 		margin-top: 1.5rem;
- 	}
-	.img__cont{
 	}
-	.img__anime{
+
+	.img__anime {
 		width: 100%;
 		filter: drop-shadow(3px 3px 2px rgb(132, 200, 255));
 	}
@@ -64,7 +92,6 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		gap: 2rem;
 		padding: 1rem;
 	}
 	.score {
@@ -79,17 +106,35 @@
 	}
 	.genres {
 		display: flex;
+		flex-direction: column;
 		align-self: flex-start;
 		gap: 1rem;
 		flex-wrap: wrap;
+		margin-top: 3rem;
+	}
+	.title-genre {
+		border-bottom: 1px solid #ccc;
+		width: fit-content;
 	}
 	.genre__name {
 		background-color: #243b55;
-        color: #f1f1f1;
-		padding: 0.7rem;
-		border-radius: 30px;
+		color: #f1f1f1;
+		padding: 0.5rem 1rem;
+		border-radius: 5px;
+		width: fit-content;
+	}
+	.episodes {
+		margin-top: 1rem;
+		align-self: flex-start;
+		justify-self: flex-start;
+	}
+	.estado {
+		margin: 2rem 0rem;
+		align-self: flex-start;
+		justify-self: flex-start;
 	}
 	.sinapsis {
+		margin-top: 3rem;
 		align-self: flex-start;
 		justify-self: flex-start;
 	}
@@ -99,14 +144,22 @@
 		padding: 0.5rem;
 		border-radius: 30px;
 		width: fit-content;
-        background-color: #243b55;
-        color: #f1f1f1;
-        font-size: var(--step--1);
+		background-color: #243b55;
+		color: #f1f1f1;
+		font-size: var(--step--1);
 	}
 	details[open] summary ~ * {
-		animation: sweep 1s ease-in-out;
+		animation: sweep 1s ease-in-out forwards;
 	}
- 
+	.trailer {
+		margin: 5rem 0rem 1rem 0rem;
+		width: 90%;
+		height: 70vh;
+	}
+	.video{
+		width: 100%;
+		height: 100%;
+	}
 	@keyframes sweep {
 		0% {
 			opacity: 0;
@@ -116,10 +169,9 @@
 			margin-left: 0px;
 		}
 	}
-    @media all and (max-width:586px){
-        .genres{
-            font-size: var(--step--1);
-        }
-
-    }
+	@media all and (max-width: 586px) {
+		section {
+			font-size: var(--step--1);
+		}
+	}
 </style>

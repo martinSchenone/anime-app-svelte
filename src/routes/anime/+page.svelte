@@ -16,8 +16,8 @@
 </script>
 
 <section in:fly={{ x: 50, duration: 500, delay: 500 }}>
-	<SearchComponent />
-	<SortBy/>
+		<SearchComponent />
+		<SortBy/>
 	<div class="animes">
 		{#each animes as anime}
 			<AnimeCard {anime} />
@@ -78,4 +78,5 @@
 		transform: scale(1.1);
 		color: #ffffff;
 	}
+	
 </style>

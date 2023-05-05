@@ -1,6 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
-	let genresList = ['Publishing', 'Upcoming', 'By Popularity', 'Favorite'];
+	let genresList = ['Publishing','By popularity', 'Favorite','Upcoming'];
 	let selected;
 	const navegarGenero = () => {
 		goto(`/mangas/genres/${selected.toLowerCase().trim()}`);
@@ -20,7 +20,7 @@
 	.sortBy {
 		max-width: 350px;
 		width: 100%;
-		padding: 1rem;
+		margin: 1.5rem 0rem;
 	}
 	select,
 	option {
@@ -30,5 +30,6 @@
 		color: #f1f1f1;
 		padding: 0.5rem 1rem;
 		font-size: var(--step-0);
+		border-radius: 1rem;
 	}
 </style>

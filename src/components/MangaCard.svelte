@@ -44,13 +44,26 @@
 		cursor: pointer;
 	}
 	h2 {
-		font-size: 0.9rem;
+		font-size: var(--step--1);
+		transition: all 1s;	
+		padding: 0.6rem 1.5rem;
+		background-color: #0A2647;
+		color: #55a0e0;
+		border-radius: 1rem 1rem 0rem 1rem;
 	}
-	.description {
-		height: 10vh;
+	.description{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	h2:hover{
+		background-color: #144272;
 	}
 	p {
 		font-size: 0.8rem;
+		font-weight: bold;
 	}
 
 	#emision {
