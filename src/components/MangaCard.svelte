@@ -46,10 +46,8 @@
 	h2 {
 		font-size: var(--step--1);
 		transition: all 1s;	
-		padding: 0.6rem 1.5rem;
-		background-color: #0A2647;
-		color: #55a0e0;
-		border-radius: 1rem 1rem 0rem 1rem;
+		padding: 0.6rem 1rem;
+		color: #f9f9f9;
 	}
 	.description{
 		display: flex;
@@ -59,7 +57,7 @@
 		text-align: center;
 	}
 	h2:hover{
-		background-color: #144272;
+		background-color: rgb(23, 71, 122);
 	}
 	p {
 		font-size: 0.8rem;
