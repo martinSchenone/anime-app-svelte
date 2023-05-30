@@ -1,5 +1,4 @@
 <script>
-	import { space } from 'svelte/internal';
 	import { fly } from 'svelte/transition';
 	export let data;
 	let anime = data.props.data;
@@ -7,13 +6,15 @@
 	const open = () => {
 		isOpen = !isOpen;
 	};
-	console.log(anime);
 </script>
 
 <section in:fly={{ x: 50, duration: 500, delay: 500 }}>
+	{#if anime.length == 0}
+	<h1>Anime wasn't found</h1>
+	{:else}
 	<div class="containeranime">
 		<div class="img__cont">
-			<div class="score">
+			<div class={anime.score !== null ? "score":"score hidden"} >
 				<span>
 					<i class="fa-solid fa-star" style="color: #fbff00;" />
 					{anime.score}
@@ -35,7 +36,7 @@
 			<span>Status:</span>
 			<span>{anime.status}</span>
 		</div>
-		<div class="episodes">
+		<div class={anime.episodes !== null ?"episodes":"episodes hidden"}>
 			<i class="fa-regular fa-eye" />
 			<span>Episodes: {anime.episodes}</span>
 		</div>
@@ -55,7 +56,7 @@
 				<p>{anime.synopsis}</p>
 			</details>
 		</div>
-		{#if anime.trailer.embed_url.length === 0}
+		{#if anime.trailer.embed_url == null}
 			<span>Trailer not found</span>
 		{:else}
 			<h2 style="border-bottom:1px solid #ccc">Trailer</h2>
@@ -68,6 +69,7 @@
 			</div>
 		{/if}
 	</div>
+	{/if}
 </section>
 
 <style>
@@ -104,6 +106,10 @@
 		margin: 0.3rem;
 		background-color: #141e30;
 	}
+	.score.hidden{
+		visibility: hidden;
+		opacity: 0;
+	}
 	.genres {
 		display: flex;
 		flex-direction: column;
@@ -127,6 +133,10 @@
 		margin-top: 1rem;
 		align-self: flex-start;
 		justify-self: flex-start;
+	}
+	.episodes.hidden{
+		visibility: hidden;
+		opacity: 0;
 	}
 	.estado {
 		margin: 2rem 0rem;
