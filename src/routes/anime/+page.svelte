@@ -16,8 +16,10 @@
 </script>
 
 <section in:fly={{ x: 50, duration: 500, delay: 500 }}>
+	<div class="search_sort_container">
 		<SearchComponent />
 		<SortBy/>
+	</div>
 	<div class="animes">
 		{#each animes as anime}
 			<AnimeCard {anime} />
@@ -77,6 +79,18 @@
 	.currentPage:is(:hover, :focus) {
 		transform: scale(1.1);
 		color: #ffffff;
+	}
+	
+	.search_sort_container{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width:100%;
+	}
+	@media all and (max-width:668px){
+		.search_sort_container{
+			display: block;
+		}
 	}
 	
 </style>

@@ -8,6 +8,7 @@
 
 <section class="genres" in:fly={{ x: 50, duration: 500, delay: 500 }}>
 	<BackButton pagina='/anime'/>
+	<h2>{animes[0].status} Animes</h2>
 	<div class="animes">
 		{#each animes as anime}
 			<AnimeCard {anime} />
@@ -20,6 +21,9 @@
 		width: 90%;
 		max-width: 1200px;
 		margin-inline: auto;
+	}
+	h2{
+		color:#f6f6f6;
 	}
 	.animes {
 		display: grid;

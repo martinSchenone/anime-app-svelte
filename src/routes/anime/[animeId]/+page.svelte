@@ -57,7 +57,7 @@
 			</details>
 		</div>
 		{#if anime.trailer.embed_url == null}
-			<span>Trailer not found</span>
+			<span></span>
 		{:else}
 			<h2 style="border-bottom:1px solid #ccc">Trailer</h2>
 			<div class="trailer">

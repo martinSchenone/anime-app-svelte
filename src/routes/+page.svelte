@@ -1,5 +1,10 @@
+<script>
+	import HeroHome from "../components/HeroHome.svelte";
+    export let data;
+</script>
 <section>
     <h1>Welcome to AnimeX</h1>
+    <HeroHome {data}/>
     <h3><a href="/anime">Click to see top animes and mangas</a></h3>
 </section>
 

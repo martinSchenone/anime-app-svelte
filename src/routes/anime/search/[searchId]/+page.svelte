@@ -2,6 +2,7 @@
 	import { fly } from 'svelte/transition';
 	import AnimeCard from '../../../../components/AnimeCard.svelte';
 	import BackButton from '../../../../components/BackButton.svelte';
+	import AnimeNotFound from '../../../../components/animeNotFound.svelte';
 	export let data;
 	const animes = data.props.data;
 </script>
@@ -9,9 +10,7 @@
 <section in:fly={{ x: 50, duration: 500, delay: 500 }}>
 	<BackButton pagina="/anime" />
 	{#if animes.length == 0}
-		<div class="container_notfound">
-			<h1 class="notfound">Anime wasn't found</h1>
-		</div>
+		<AnimeNotFound />
 	{:else}
 		<div class="animes">
 			{#each animes as anime}

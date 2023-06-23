@@ -3,6 +3,7 @@
     import BackButton from '../../../../components/BackButton.svelte';
 import MangaCard from '../../../../components/MangaCard.svelte';
     import {fly} from 'svelte/transition'
+	import NotFound from '../../../../components/notFound.svelte';
     export let data;
     const mangas = data.props.data;
 </script>
@@ -10,7 +11,7 @@ import MangaCard from '../../../../components/MangaCard.svelte';
 <section in:fly={{ x: 50, duration: 500, delay: 500 }}>
     <BackButton pagina='/mangas'/>
     {#if mangas.length == 0}
-    <h1 class="notfound">Manga wasn't found</h1>
+    <NotFound/>
     {:else}
     <div class="mangas">
         {#each mangas as manga}
@@ -31,8 +32,6 @@ import MangaCard from '../../../../components/MangaCard.svelte';
         grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
         gap: 3rem;
     }
-    .notfound{
-        text-align: center;
-        color: #f1f1f1;
-    }
+  
+
 </style>

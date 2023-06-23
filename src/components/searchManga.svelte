@@ -72,11 +72,16 @@
 		outline: none;
 		color: #f1f1f1;
 		padding: 0.5rem 0.1rem;
-		transition: background-color 0.75s ease-out;
 		font-weight: bold;
-		background-color:#243B55;
 		padding: 1rem;
 		border-radius: 1rem;
+		background-color: #fff;
+		background: linear-gradient(
+			to top,
+			#243b55,
+			#141e30
+		);
+		
 	}
 	label {
 		position: absolute;
