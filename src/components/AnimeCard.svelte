@@ -33,6 +33,7 @@
 		transform: scale(var(--escala, 1));
 		transition: transform 250ms linear;
 		filter: drop-shadow(3px 3px 2px rgb(132, 200, 255));
+		overflow: hidden;
 	}
 	img:hover {
 		--escala: 1.025;

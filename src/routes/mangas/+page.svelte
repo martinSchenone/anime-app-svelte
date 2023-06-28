@@ -1,16 +1,11 @@
 <script>
 	import MangaCard from '../../components/MangaCard.svelte';
+	import Pagination from '../../components/Pagination.svelte';
 	import SearchManga from '../../components/searchManga.svelte';
 	import SortByManga from '../../components/SortByManga.svelte';
 	import { fly } from 'svelte/transition';
 	export let data;
-	let dataPaginas = data.props.pagination;
-	let pageSize = 3000;
-	// dataPaginas.last_visible_page por motivos de cantidad de paginas reemplaze la pageSize por un valor fijo
 	$: mangas = data.props.data;
-	$: totalItems = data.props.pagination.items.total;
-	$: totalPages = Math.ceil(totalItems / pageSize);
-	$: currentPage = dataPaginas.current_page;
 </script>
 
 <section in:fly={{ x: 50, duration: 500, delay: 500 }}>
@@ -25,16 +20,7 @@
 		{/each}
 	</div>
 </section>
-<div class="pagination">
-	{#each Array(totalPages) as _, idx}
-		<a
-			class="currentPage"
-			href="/mangas?page={dataPaginas.has_next_page ? (currentPage = idx) : currentPage}"
-		>
-			{idx + 1}
-		</a>
-	{/each}
-</div>
+<Pagination {data} />
 
 <style>
 	section {

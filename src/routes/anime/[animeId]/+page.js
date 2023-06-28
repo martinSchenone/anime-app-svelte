@@ -7,7 +7,16 @@ export const load = async ({fetch,params}) => {
             return data;
         }
     }
+    const fetchRelationalsAnimes = async (id)=>{
+        const url = `https://api.jikan.moe/v4/anime/${id}/relations`
+        const res = await fetch(url)
+        const data = await res.json();    
+        if(res.ok){
+            return data;
+        }
+    }
     return{
-        props:fetchAnimes(params.animeId)
+        props:fetchAnimes(params.animeId),
+        relations:fetchRelationalsAnimes(params.animeId)
     }
 }

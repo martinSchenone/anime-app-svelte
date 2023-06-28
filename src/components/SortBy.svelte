@@ -8,7 +8,7 @@
 </script>
 
 <div class="sortBy">
-	<select name="genres" id="genres" bind:value={selected} on:change={navegarGenero}>
+	<select name="genres" id="genres" bind:value={selected} on:change={navegarGenero} >
 		<option value="" hidden selected>Sort by</option>
 		{#each genresList as genre}
 			<option value={genre}>{genre}</option>
