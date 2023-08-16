@@ -1,74 +1,54 @@
-<header>
-	<div class="title">
-		<h1><a href="/anime" sveltekit:prefetch>AnimeX</a></h1>
+<div class="drawer text-neutral-50 text-2xl">
+	<input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+	<div class="drawer-content flex flex-col">
+		<div class="w-full navbar border-b ">
+			<div class="flex-none lg:hidden">
+				<label for="my-drawer-3" class="btn btn-square btn-ghost">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						class="inline-block w-6 h-6 stroke-current"
+						><path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M4 6h16M4 12h16M4 18h16"
+						/></svg
+					>
+				</label>
+			</div>
+			<div class="flex-1 px-2 mx-2 tracking-tight text-3xl">
+				<h1><a href="/">AnimeX</a></h1>
+			</div>
+			<div class="flex-none hidden lg:block">
+				<ul class="menu menu-horizontal text-lg">
+					<!-- Navbar menu content here -->
+					<li><a href="/anime">ANIMES</a></li>
+					<li><a href="/mangas">MANGAS</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
-	<nav class="nav">
-		<ul class="nav-ul">
-			<li><a href="/anime" sveltekit:prefetch>Animes</a></li>
-			<li><a href="/mangas" sveltekit:prefetch>Mangas</a></li>
+	<div class="drawer-side z-10">
+		<label for="my-drawer-3" class="drawer-overlay " />
+		<ul class="menu p-4 w-80 h-full bg-base-200       text-neutral-50 menu_mobile text-lg">
+			<!-- Sidebar content here -->
+			<li ><a href="/anime">ANIMES</a></li>
+			<li ><a href="/mangas">MANGAS</a></li>
 		</ul>
-	</nav>
-</header>
+	</div>
+</div>
 
 <style>
-	header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 90%;
-	filter: drop-shadow(1px 1px 1px #ccc);
+	.navbar,.menu_mobile {
 		background: #141e30; /* fallback for old browsers */
 		background: -webkit-linear-gradient(to top, #243b55, #141e30); /* Chrome 10-25, Safari 5.1-6 */
 		background: linear-gradient(
-			to top,
+			to left,
 			#243b55,
 			#141e30
 		); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-		max-width: 1200px;
-		margin-inline: auto;
-		margin-bottom: 0.5rem;
-		border-bottom-left-radius: 1rem;
-		border-bottom-right-radius: 1rem;
 	}
-	.title {
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		font-size: min(1rem, 10vw + 1rem, 2vmin);
-		padding: 0rem 1rem;
-	}
-
-	.nav-ul {
-		display: flex;
-		gap: 2rem;
-		list-style: none;
-		padding: 0rem 1rem;
-		justify-content: center;
-		align-items: center;
-		font-size: var(--step--2);
-	}
-	.nav-ul a {
-		text-decoration: none;
-		color: #f1f1f1;
-	}
-	.nav-ul a:hover {
-		color: rgb(78, 78, 78);
-	}
-	h1 > a {
-		text-decoration: none;
-		color: #f1f1f1;
-	}
-
-	/*Media queries*/
-	@media all and (min-width: 1200px) {
-		.nav-ul {
-			font-size: var(--step-0);
-		}
-	}
-	@media all and (min-width: 1800px) {
-		.nav-ul {
-			font-size: var(--step-1);
-		}
-	}
+	
 </style>

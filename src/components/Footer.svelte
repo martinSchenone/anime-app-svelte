@@ -1,10 +1,10 @@
-<footer>
-	<div class="datos">
-		<p>Web Designed By:<br>Schenone Martin &copy;</p>
-        
+<footer class="w-full h-40 flex flex-col justify-center items-center text-xl text-neutral-50 gap-4 mt-10 md:flex-row md:justify-around border-t-2 border-[#0f0f0f0e]">
+	<div class="datos text-center w-full md:w-auto">
+		<p>Designed By</p>
+		<p>Schenone Martin &copy;</p>
 	</div>
-	<div class="redes">
-		<ul>
+	<div class="redes w-full md:w-auto">
+		<ul class="flex w-full justify-center gap-8">
 			<li>
 				<a href="https://www.instagram.com/martinschenone/">
 					<i class="bi bi-instagram" />
@@ -21,38 +21,4 @@
 
 <style>
 	@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css');
-	footer {
-		border-top: 1px solid #ccccccad;
-		padding: 0rem 1rem;
-		margin-top: 3rem;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		color: #f1f1f1;
-	}
-	.datos {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 1rem;
-	}
-    .redes{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-	ul {
-		list-style: none;
-		display: flex;
-		gap: 2rem;
-		padding: 0rem 1rem;
-	}
-	a {
-		text-decoration: none;
-		color: inherit;
-	}
-    p{
-        font-size: 1.2rem;
-    }
-   
 </style>

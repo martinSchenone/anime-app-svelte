@@ -1,6 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
-	import { fly ,fade } from 'svelte/transition';
+	import { fly, fade } from 'svelte/transition';
 	let inputValue = '';
 	let active = false;
 	function cancelInactive() {
@@ -17,13 +17,9 @@
 
 <form on:submit|preventDefault={submitSearch} class="search">
 	{#if !active}
-		<label 
-		in:fly="{{ y: -10, duration: 500 }}"
-		out:fade
-		for="search_movie"
-		class="searchText">
-		Search mangas
-	</label>
+		<label in:fly={{ y: -10, duration: 500 }} out:fade for="search_movie" class="searchText">
+			Search mangas
+		</label>
 	{/if}
 	<input
 		on:blur={cancelInactive}
@@ -34,32 +30,27 @@
 		class={active ? 'selected' : ''}
 	/>
 	{#if inputValue}
-		<button
-		class="searchBtn"
-		in:fly="{{ y: 0, duration: 500 }}"
-		out:fade
-		>Search</button>
+		<button class="searchBtn" in:fly={{ y: 0, duration: 500 }} out:fade>Search</button>
 	{/if}
 </form>
 
 <style>
 	.search {
 		position: relative;
-		width:70%;
+		width: 70%;
 		max-width: 350px;
 		margin: 1.5rem 0rem;
 	}
 	button {
-		font-size: 0.7rem;
 		padding: 0rem 1rem;
-		background-color: #243B55;
+		background-color: #243b55;
 		color: white;
-		font-weight: bold;
+		font-weight: 500;
 		border: none;
 		position: absolute;
 		bottom: 50%;
-		right: -32px;
-		transform: translate(0, 49%);
+		right: 0px;
+		transform: translate(0, 50%);
 		height: 100%;
 		cursor: pointer;
 		border-top-right-radius: 1rem;
@@ -76,12 +67,7 @@
 		padding: 1rem;
 		border-radius: 1rem;
 		background-color: #fff;
-		background: linear-gradient(
-			to top,
-			#243b55,
-			#141e30
-		);
-		
+		background: linear-gradient(to top, #243b55, #141e30);
 	}
 	label {
 		position: absolute;
@@ -94,10 +80,12 @@
 		padding: 0rem 1rem;
 	}
 	input.selected {
-		background-color:#446d9c;
+		background-color: #446d9c;
 	}
-	@media all and (min-width:1440px){
-		.searchText,input,.searchBtn{
+	@media all and (min-width: 1440px) {
+		.searchText,
+		input,
+		.searchBtn {
 			font-size: var(--step-1);
 		}
 	}

@@ -18,7 +18,7 @@
         width: min(30%,135px);
 		border-radius: 0.5rem;
 		cursor: pointer;
-		margin: 1rem 0rem;
+		margin: 3rem 0rem;
 		outline: none;
 		border: none;
 		padding: 0.5rem 1rem;

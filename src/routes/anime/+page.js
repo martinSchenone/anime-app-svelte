@@ -12,7 +12,23 @@ export const load = async ({ url, fetch }) => {
 			console.error(error);
 		}
 	};
+	const fetchSeasonAnimes = async () => {
+		try {
+			const res = await fetch('https://api.jikan.moe/v4/seasons/now');
+		const data = await res.json();
+		if(res.ok){
+			return data;
+		}
+		} catch (err) {
+			throw Error({
+				message:'Algo no salio como lo esperado',
+				error:err,
+			})
+		}
+
+	};
 	return {
-		props: fetchAnimes(page)
+		props: fetchAnimes(page),
+		seasonAnimes:fetchSeasonAnimes(),
 	};
 };

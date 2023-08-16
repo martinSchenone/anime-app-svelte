@@ -1,7 +1,7 @@
 <script>
 	import Nav from '../components/Nav.svelte';
 	import Footer from '../components/Footer.svelte';
-	
+	import '../app.css';
 </script>
 
 <html lang="en">
@@ -14,8 +14,7 @@
 		<script src="https://kit.fontawesome.com/6bc29ab44b.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
-		
-		<Nav />
+		<Nav/> 
 		<slot />
 		<Footer />
 	</body>

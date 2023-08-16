@@ -1,32 +1,15 @@
-<section>
-	<h1>Welcome to AnimeX</h1>
-	<h3><a href="/anime">Click to see top animes and mangas</a></h3>
+<section
+	class="w-[90%] max-w-[1200px] mx-auto flex justify-center items-center flex-col min-h-[70vh] text-neutral-50 gap-10 pt-10"
+>
+	<div class="container title text-4xl md:text-5xl text-center uppercase p-2">
+		<h1>Welcome to animeX</h1>
+	</div>
+	<div class="container subtitle flex justify-evenly">
+		<div class="button_cont p-2 btn bg-sky-900 border-sky-900 text-neutral-50 text-xl font-thin hover:bg-sky-500 hover:border-sky-500">
+			<button><a href="/anime">ANIMES</a></button>
+		</div>
+		<div class="button_cont p-2 btn bg-cyan-900 border-cyan-900 text-neutral-50 text-xl font-thin hover:bg-cyan-600 hover:border-cyan-600">
+			<button><a href="/mangas">MANGAS</a></button>
+		</div>
+	</div>
 </section>
-
-<style>
-	section {
-		width: 90%;
-		max-width: 1200px;
-		margin-inline: auto;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		min-height: 70vh;
-		color: #f1f1f1;
-	}
-	h3 {
-		padding: 0.8rem;
-		transition: all 500ms;
-		border-radius: 0.5rem;
-		opacity: 0.5;
-	}
-	a {
-		text-decoration: none;
-		color: #f1f1f1;
-	}
-	h3:hover {
-		background: #0a4a75;
-		opacity: 1;
-	}
-</style>

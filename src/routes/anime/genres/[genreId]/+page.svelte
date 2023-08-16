@@ -9,7 +9,9 @@
 
 <section class="genres" in:fly={{ x: 50, duration: 500, delay: 500 }}>
 	<BackButton pagina="/anime" />
+	<div class="title mb-10 text-neutral-50 text-2xl">
 	<h2>{animes[0].status} Animes</h2>
+	</div>
 	<div class="animes">
 		{#each animes as anime}
 			<AnimeCard {anime} />
@@ -20,14 +22,11 @@
 
 <style>
 	section {
-		width: 90%;
+		width: 80%;
 		max-width: 1200px;
 		margin-inline: auto;
 	}
-	h2 {
-		color: #f6f6f6;
-		text-align: center;
-	}
+	
 	.animes {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

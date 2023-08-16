@@ -13,7 +13,9 @@
 		<SearchManga />
 		<SortByManga />
 	</div>
-
+	<div class="top_animes text-neutral-50 text-4xl pb-10 font-bold">
+		<h1>TOP MANGAS</h1>
+	</div>
 	<div class="mangas">
 		{#each mangas as manga}
 			<MangaCard {manga} />
@@ -24,14 +26,14 @@
 
 <style>
 	section {
-		width: 90%;
+		width: 80%;
 		max-width: 1200px;
 		margin-inline: auto;
 	}
 	.mangas {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		gap: 3rem;
+		grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+		gap: 4rem;
 	}
 
 	.search_sort_container {

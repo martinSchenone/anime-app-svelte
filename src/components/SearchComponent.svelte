@@ -17,9 +17,9 @@
 
 <form on:submit|preventDefault={submitSearch} class="search">
 	{#if !active}
-		<label 
-		class="searchText"
-		in:fly={{ y: -10, duration: 500 }} out:fade for="search_anime"> Search animes </label>
+		<label class="searchText" in:fly={{ y: -10, duration: 500 }} out:fade for="search_anime">
+			Search animes
+		</label>
 	{/if}
 	<input
 		required
@@ -31,36 +31,31 @@
 		class={active ? 'selected' : ''}
 	/>
 	{#if inputValue}
-		<button 
-		class="searchBtn"
-		in:fly={{ y: 0, duration: 500 }} out:fade>Search</button>
+		<button class="searchBtn" in:fly={{ y: 0, duration: 500 }} out:fade>Search</button>
 	{/if}
 </form>
 
 <style>
 	.search {
 		position: relative;
-		width: 70%;
-		max-width: 350px;
+		width: min(300px, 45%);
 		margin: 1.5rem 0rem;
-}
+		filter: drop-shadow(1px 1px 1px #ccc);
+	}
 	button {
-		font-size: 0.7rem;
 		padding: 0rem 1rem;
-		background-color: #243B55;
+		background-color: #243b55;
 		color: white;
-		font-weight: bold;
+		font-weight: 500;
 		border: none;
 		position: absolute;
 		bottom: 50%;
-		right: -32px;
-		transform: translate(0, 49%);
+		right: 0px;
+		transform: translate(0, 50%);
 		height: 100%;
 		cursor: pointer;
 		border-top-right-radius: 1rem;
 		border-bottom-right-radius: 1rem;
-
-		
 	}
 	input {
 		width: 100%;
@@ -70,16 +65,10 @@
 		color: #f1f1f1;
 		padding: 0.5rem 0.1rem;
 		font-weight: bold;
-		background: #243B55;
 		padding: 1rem;
 		border-radius: 1rem;
 		background-color: #fff;
-		background: linear-gradient(
-			to top,
-			#243b55,
-			#141e30
-		); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-		
+		background: linear-gradient(to top, #243b55, #141e30);
 	}
 	label {
 		position: absolute;
@@ -94,8 +83,10 @@
 	input.selected {
 		background-color: #446d9c;
 	}
-	@media all and (min-width:1440px){
-		.searchText,input,.searchBtn{
+	@media all and (min-width: 1440px) {
+		.searchText,
+		input,
+		.searchBtn {
 			font-size: var(--step-1);
 		}
 	}
