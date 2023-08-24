@@ -13,7 +13,7 @@
 		<h1>New Season Animes</h1>
 	</div>
 	<swiper-container
-		class="text-neutral-50 w-full mt-5 h-[35dvh] "
+		class="text-neutral-50  mt-5 h-[50dvh] "
 		autoplay-delay="3000"
 		autoplay-disable-on-interaction="false"
 		loop={true}
@@ -26,21 +26,23 @@
 			680: {
 				slidesPerView: 3
 			},
-			1200:{
-				slidesPerView:4
+			1200: {
+				slidesPerView: 4
 			},
-			1440:{
-				slidesPerView:5
+			1440: {
+				slidesPerView: 5
 			}
 		}}
 	>
 		{#each seasonAnimes as anime}
-			<swiper-slide class="relative ">
-				<span class="flex justify-center items-center absolute h-full text-center p-1 z-0 hover:z-10 text-white w-full ">
+			<swiper-slide class="relative flex items-center justify-center ">
+				<span
+					class="flex justify-center items-center absolute h-full text-center p-1 z-0 hover:z-10 text-white w-full"
+				>
 					{anime.title}
 				</span>
 				<a href={'/anime/' + anime.mal_id} class="relative">
-					<img 
+					<img
 						src={anime.images.webp.large_image_url}
 						alt={anime.title}
 						id={anime.mal_id}
