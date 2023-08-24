@@ -13,7 +13,7 @@
 		<h1>New Season Animes</h1>
 	</div>
 	<swiper-container
-		class="text-neutral-50 w-full mt-5 "
+		class="text-neutral-50 w-full mt-5 h-[35dvh] "
 		autoplay-delay="3000"
 		autoplay-disable-on-interaction="false"
 		loop={true}
